@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -g  -rdynamic CMakeFiles/cartopics.dir/main.cpp.o  -o cartopics libDEM/libDEM.a libDEM/delaunator/libdelaunator.a 

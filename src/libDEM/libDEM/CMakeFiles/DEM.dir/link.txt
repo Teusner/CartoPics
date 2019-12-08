@@ -1,0 +1,2 @@
+/usr/bin/ar qc libDEM.a  CMakeFiles/DEM.dir/DEM.cpp.o
+/usr/bin/ranlib libDEM.a

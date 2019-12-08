@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/quentin/Bureau/C++/TP6_Rendu_Modele_Numerique_Terrain/libDEM/DEM.h
+map
+-
+vector
+-
+iterator
+-
+iostream
+-
+iomanip
+-
+fstream
+-
+sstream
+-
+math.h
+-
+
+/home/quentin/Bureau/C++/TP6_Rendu_Modele_Numerique_Terrain/main.cpp
+cstdlib
+-
+iostream
+-
+vector
+-
+libDEM/DEM.h
+/home/quentin/Bureau/C++/TP6_Rendu_Modele_Numerique_Terrain/libDEM/DEM.h
+

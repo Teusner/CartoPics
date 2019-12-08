@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdelaunator.a  CMakeFiles/delaunator.dir/delaunator.cpp.o
+/usr/bin/ranlib libdelaunator.a
