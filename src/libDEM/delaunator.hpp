@@ -1,10 +1,13 @@
-#include "delaunator.hpp"
+#pragma once
 
 #include <algorithm>
 #include <cmath>
+#include <exception>
+#include <iostream>
 #include <limits>
-#include <stdexcept>
-#include <tuple>
+#include <memory>
+#include <utility>
+#include <vector>
 
 namespace delaunator {
 
@@ -59,7 +62,7 @@ inline double circumradius(
     if ((bl > 0.0 || bl < 0.0) && (cl > 0.0 || cl < 0.0) && (d > 0.0 || d < 0.0)) {
         return x * x + y * y;
     } else {
-        return (std::numeric_limits<double>::max)();
+        return std::numeric_limits<double>::max();
     }
 }
 
@@ -73,7 +76,7 @@ inline bool orient(
     return (qy - py) * (rx - qx) - (qx - px) * (ry - qy) < 0.0;
 }
 
-inline Point circumcenter(
+inline std::pair<double, double> circumcenter(
     const double ax,
     const double ay,
     const double bx,
@@ -92,37 +95,22 @@ inline Point circumcenter(
     const double x = ax + (ey * bl - dy * cl) * 0.5 / d;
     const double y = ay + (dx * cl - ex * bl) * 0.5 / d;
 
-    return Point(x, y);
+    return std::make_pair(x, y);
 }
-
 
 struct compare {
 
     std::vector<double> const& coords;
-    std::vector<double> dists;
+    double cx;
+    double cy;
 
-    compare(std::vector<double> const& coords, const Point& center) :
-        coords(coords)
-    {
-        size_t n = coords.size() / 2;
-        dists.reserve(n);
-        double const *xcoord = coords.data();
-        double const *ycoord = coords.data() + 1;
-        while (n--)
-        {
-            dists.push_back(dist(*xcoord, *ycoord, center.x(), center.y()));
-            xcoord += 2;
-            ycoord += 2;
-        }
-    }
-
-    bool operator()(std::size_t i, std::size_t j)
-    {
-        const double diff1 = dists[i] - dists[j];
+    bool operator()(std::size_t i, std::size_t j) {
+        const double d1 = dist(coords[2 * i], coords[2 * i + 1], cx, cy);
+        const double d2 = dist(coords[2 * j], coords[2 * j + 1], cx, cy);
+        const double diff1 = d1 - d2;
         const double diff2 = coords[2 * i] - coords[2 * j];
         const double diff3 = coords[2 * i + 1] - coords[2 * j + 1];
 
-        //ABELL - Not sure why we're not just checking != 0 here.
         if (diff1 > 0.0 || diff1 < 0.0) {
             return diff1 < 0;
         } else if (diff2 > 0.0 || diff2 < 0.0) {
@@ -132,7 +120,6 @@ struct compare {
         }
     }
 };
-
 
 inline bool in_circle(
     const double ax,
@@ -160,6 +147,7 @@ inline bool in_circle(
 }
 
 constexpr double EPSILON = std::numeric_limits<double>::epsilon();
+constexpr std::size_t INVALID_INDEX = std::numeric_limits<std::size_t>::max();
 
 inline bool check_pts_equal(double x1, double y1, double x2, double y2) {
     return std::fabs(x1 - x2) <= EPSILON &&
@@ -182,6 +170,40 @@ struct DelaunatorPoint {
     bool removed;
 };
 
+class Delaunator {
+
+public:
+    std::vector<double> const& coords;
+    std::vector<std::size_t> triangles;
+    std::vector<std::size_t> halfedges;
+    std::vector<std::size_t> hull_prev;
+    std::vector<std::size_t> hull_next;
+    std::vector<std::size_t> hull_tri;
+    std::size_t hull_start;
+
+    Delaunator(std::vector<double> const& in_coords);
+
+    double get_hull_area();
+
+private:
+    std::vector<std::size_t> m_hash;
+    double m_center_x;
+    double m_center_y;
+    std::size_t m_hash_size;
+    std::vector<std::size_t> m_edge_stack;
+
+    std::size_t legalize(std::size_t a);
+    std::size_t hash_key(double x, double y) const;
+    std::size_t add_triangle(
+        std::size_t i0,
+        std::size_t i1,
+        std::size_t i2,
+        std::size_t a,
+        std::size_t b,
+        std::size_t c);
+    void link(std::size_t a, std::size_t b);
+};
+
 Delaunator::Delaunator(std::vector<double> const& in_coords)
     : coords(in_coords),
       triangles(),
@@ -191,14 +213,16 @@ Delaunator::Delaunator(std::vector<double> const& in_coords)
       hull_tri(),
       hull_start(),
       m_hash(),
+      m_center_x(),
+      m_center_y(),
       m_hash_size(),
       m_edge_stack() {
     std::size_t n = coords.size() >> 1;
 
-    double max_x = (std::numeric_limits<double>::min)();
-    double max_y = (std::numeric_limits<double>::min)();
-    double min_x = (std::numeric_limits<double>::max)();
-    double min_y = (std::numeric_limits<double>::max)();
+    double max_x = std::numeric_limits<double>::min();
+    double max_y = std::numeric_limits<double>::min();
+    double min_x = std::numeric_limits<double>::max();
+    double min_y = std::numeric_limits<double>::max();
     std::vector<std::size_t> ids;
     ids.reserve(n);
 
@@ -215,7 +239,7 @@ Delaunator::Delaunator(std::vector<double> const& in_coords)
     }
     const double cx = (min_x + max_x) / 2;
     const double cy = (min_y + max_y) / 2;
-    double min_dist = (std::numeric_limits<double>::max)();
+    double min_dist = std::numeric_limits<double>::max();
 
     std::size_t i0 = INVALID_INDEX;
     std::size_t i1 = INVALID_INDEX;
@@ -233,7 +257,7 @@ Delaunator::Delaunator(std::vector<double> const& in_coords)
     const double i0x = coords[2 * i0];
     const double i0y = coords[2 * i0 + 1];
 
-    min_dist = (std::numeric_limits<double>::max)();
+    min_dist = std::numeric_limits<double>::max();
 
     // find the point closest to the seed
     for (std::size_t i = 0; i < n; i++) {
@@ -248,7 +272,7 @@ Delaunator::Delaunator(std::vector<double> const& in_coords)
     double i1x = coords[2 * i1];
     double i1y = coords[2 * i1 + 1];
 
-    double min_radius = (std::numeric_limits<double>::max)();
+    double min_radius = std::numeric_limits<double>::max();
 
     // find the third point which forms the smallest circumcircle with the first two
     for (std::size_t i = 0; i < n; i++) {
@@ -263,7 +287,7 @@ Delaunator::Delaunator(std::vector<double> const& in_coords)
         }
     }
 
-    if (!(min_radius < (std::numeric_limits<double>::max()))) {
+    if (!(min_radius < std::numeric_limits<double>::max())) {
         throw std::runtime_error("not triangulation");
     }
 
@@ -276,10 +300,10 @@ Delaunator::Delaunator(std::vector<double> const& in_coords)
         std::swap(i1y, i2y);
     }
 
-    m_center = circumcenter(i0x, i0y, i1x, i1y, i2x, i2y);
+    std::tie(m_center_x, m_center_y) = circumcenter(i0x, i0y, i1x, i1y, i2x, i2y);
 
     // sort the points by distance from the seed triangle circumcenter
-    std::sort(ids.begin(), ids.end(), compare{ coords, m_center });
+    std::sort(ids.begin(), ids.end(), compare{ coords, m_center_x, m_center_y });
 
     // initialize a hash table for storing edges of the advancing convex hull
     m_hash_size = static_cast<std::size_t>(std::llround(std::ceil(std::sqrt(n))));
@@ -484,7 +508,7 @@ std::size_t Delaunator::legalize(std::size_t a) {
                         hull_tri[e] = a;
                         break;
                     }
-                    e = hull_prev[e];
+                    e = hull_next[e];
                 } while (e != hull_start);
             }
             link(a, hbl);
@@ -512,9 +536,9 @@ std::size_t Delaunator::legalize(std::size_t a) {
     return ar;
 }
 
-std::size_t Delaunator::hash_key(const double x, const double y) const {
-    const double dx = x - m_center.x();
-    const double dy = y - m_center.y();
+inline std::size_t Delaunator::hash_key(const double x, const double y) const {
+    const double dx = x - m_center_x;
+    const double dy = y - m_center_y;
     return fast_mod(
         static_cast<std::size_t>(std::llround(std::floor(pseudo_angle(dx, dy) * static_cast<double>(m_hash_size)))),
         m_hash_size);
