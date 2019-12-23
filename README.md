@@ -1,32 +1,35 @@
 # CartoPics
 
-CartoPics is a simple script to generate an image based on a Digital Elevation Model.
+CartoPics is a simple script to generate Digital Elevation Model picture.
+
+![Raster of brest](https://github.com/Teusner/CartoPics/example/brest.ppm)
+*Raster of a Brest's harbour area*
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
-Let's get started ! Clone the repository using git :
+Let's get started ! Clone the repository using git
 
 ```
 git clone https://github.com/Teusner/CartoPics
 ```
-
-
 
 ### Compiling
 
 You are now able to compile the project
 
 ```
-cd CartoPics/src/build
+cd CartoPics/src
+mkdir build
+cd build
 cmake ..
 make
 ```
 
-CartoPics is generate in Cartopics/src/build
+create_raster is now generate in Cartopics/src/build
 
 ### First example
 
@@ -39,23 +42,13 @@ To generate a Digital Elevation Model, you should have a file of the points you 
 48.29763698 -004.41738809 14.452
 ...
 ```
-And then, run CartoPics with the name of your file in parameter
+And then, run CartoPics with the name of your file in parameter and the number of pixel along the x-axis
 
 ```
-./cartopics +name=my_file
+./cartopics my_file.txt 1000
 ```
 
-You can find your output image in the same directory with the name *my_file_map*
-
-## Parameters
-
-Here is a comprehensive list of the parameters for CartoPics
-
-Parameter   | Description  | Optionnal | Note
-------------|--------------|-----------|----------
-+name       | Specify the name of the input file | False
-+out        | Specify the name of the output file | True | The default name is *my_file_map*
-+verbose    | Specify if you want verbose output | True 
+You can find your output image in the same directory with the name *my_file_map.ppm*
 
 ## Running the tests
 
@@ -69,7 +62,7 @@ Add additional notes about how to deploy this on a live system
 ## Built With
 
 * [delaunator-cpp](https://github.com/delfrrr/delaunator-cpp) - An efficient delaunay triangulation library
-* [Spectrum](https://github.com/richardroberts1992/Spectrum) - A ColorMap generator
+* [Spectrum](https://github.com/richardroberts1992/Spectrum) - A ColorMap generator [PDF Description](http://cs.swan.ac.uk/~csbob/research/callCenter/color/roberts18spectrum.pdf)
 
 ## Authors
 
