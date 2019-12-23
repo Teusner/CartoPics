@@ -2,9 +2,14 @@
 
 CartoPics is a simple script to generate Digital Elevation Model picture.
 
-![Raster of brest](https://github.com/Teusner/CartoPics/blob/master/example/brest.png)
+<p align="center">
+    <img src="https://github.com/Teusner/CartoPics/blob/master/example/brest.png">
+    <i>Raster of a Brest's harbour area</i>
+</p>
 
-*Raster of a Brest's harbour area*
+![Raster of brest]()
+
+
 
 ## Getting Started
 
