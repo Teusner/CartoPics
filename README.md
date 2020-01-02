@@ -3,7 +3,7 @@
 CartoPics is a simple script to generate Digital Elevation Model picture.
 
 <p align="center">
-    <img src="https://github.com/Teusner/CartoPics/blob/master/example/brest.png" style="height:200px;"> <br>
+    <img src="https://github.com/Teusner/CartoPics/blob/master/example/brest.png"> <br>
     <em>Raster of a Brest's harbour area</em>
 </p>
 
@@ -15,7 +15,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 Let's get started ! Clone the repository using git
 
-```
+```bash
 git clone https://github.com/Teusner/CartoPics
 ```
 
@@ -23,7 +23,7 @@ git clone https://github.com/Teusner/CartoPics
 
 You are now able to compile the project
 
-```
+```bash
 cd CartoPics/src
 mkdir build
 cd build
@@ -46,20 +46,12 @@ To generate a Digital Elevation Model, you should have a file of the points you 
 ```
 And then, run CartoPics with the name of your file in parameter and the number of pixel along the x-axis
 
-```
+```bash
 ./cartopics my_file.txt 1000
 ```
 
 You can find your output image in the same directory with the name *my_file_map.ppm*
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
@@ -68,7 +60,7 @@ Add additional notes about how to deploy this on a live system
 
 ## Authors
 
-* **Brateau Quentin** - *Initial work* - [Teusner](https://github.com/Teusner)
+* **Brateau Quentin** - *Initial work* - [Teusner](https://github.com/Teusner) 8-)
 
 ## License
 
