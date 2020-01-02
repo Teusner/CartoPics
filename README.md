@@ -60,7 +60,7 @@ You can find your output image in the same directory with the name *my_file_map.
 
 ## Authors
 
-* **Brateau Quentin** - *Initial work* - [Teusner](https://github.com/Teusner) 8-)
+* **Brateau Quentin** - *Initial work* - [Teusner](https://github.com/Teusner) :sunglasses:
 
 ## License
 
