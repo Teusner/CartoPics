@@ -1,0 +1,153 @@
+\hypertarget{classPixel}{}\section{Pixel Class Reference}
+\label{classPixel}\index{Pixel@{Pixel}}
+
+
+\hyperlink{classPixel}{Pixel} for image processing.  
+
+
+
+
+{\ttfamily \#include $<$Pixel.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPixel_a27ad99a2f705e635c42d242d530d4756}{Pixel} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+void \hyperlink{classPixel_a8136f0a0bd54795ee065eeccb1e2ba1f}{set\+R\+GB} (float \&R, float \&G, float \&B)
+\begin{DoxyCompactList}\small\item\em R\+GB Setter. \end{DoxyCompactList}\item 
+void \hyperlink{classPixel_a992f88169f2395b752b5480f825efe72}{set\+H\+SV} (float \&H, float \&S, float \&V)
+\begin{DoxyCompactList}\small\item\em H\+SV Setter. \end{DoxyCompactList}\item 
+void \hyperlink{classPixel_a87c0f730000ab94e4d5bce5e2f4b435b}{get\+R\+GB} (float \&R, float \&G, float \&B)
+\begin{DoxyCompactList}\small\item\em R\+GB Getter. \end{DoxyCompactList}\item 
+void \hyperlink{classPixel_a70dc52435e31c139f3d04c601e2ca075}{get\+H\+SV} (float \&H, float \&S, float \&V)
+\begin{DoxyCompactList}\small\item\em H\+SV Getter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classPixel_a3cbd62658db95c52ea5471707d3aaf01}{operator$<$$<$} (std\+::ostream \&stream, \hyperlink{classPixel}{Pixel} \&c)
+\begin{DoxyCompactList}\small\item\em Stream operator $<$$<$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classPixel}{Pixel} for image processing. 
+
+This \hyperlink{classPixel}{Pixel} class let us set R\+GB and H\+SV values. You can use an array of \hyperlink{classPixel}{Pixel} to represent an image. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPixel_a27ad99a2f705e635c42d242d530d4756}\label{classPixel_a27ad99a2f705e635c42d242d530d4756}} 
+\index{Pixel@{Pixel}!Pixel@{Pixel}}
+\index{Pixel@{Pixel}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{Pixel()}{Pixel()}}
+{\footnotesize\ttfamily Pixel\+::\+Pixel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Constructor of the \hyperlink{classPixel}{Pixel} class. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPixel_a70dc52435e31c139f3d04c601e2ca075}\label{classPixel_a70dc52435e31c139f3d04c601e2ca075}} 
+\index{Pixel@{Pixel}!get\+H\+SV@{get\+H\+SV}}
+\index{get\+H\+SV@{get\+H\+SV}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{get\+H\+S\+V()}{getHSV()}}
+{\footnotesize\ttfamily void Pixel\+::get\+H\+SV (\begin{DoxyParamCaption}\item[{float \&}]{H,  }\item[{float \&}]{S,  }\item[{float \&}]{V }\end{DoxyParamCaption})}
+
+
+
+H\+SV Getter. 
+
+Getter for the coordinates of the \hyperlink{classPoint}{Point} class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em H} & \+: getting the H value of the \hyperlink{classPixel}{Pixel} \\
+\hline
+{\em S} & \+: getting the S value of the \hyperlink{classPixel}{Pixel} \\
+\hline
+{\em V} & \+: getting the V value of the \hyperlink{classPixel}{Pixel} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPixel_a87c0f730000ab94e4d5bce5e2f4b435b}\label{classPixel_a87c0f730000ab94e4d5bce5e2f4b435b}} 
+\index{Pixel@{Pixel}!get\+R\+GB@{get\+R\+GB}}
+\index{get\+R\+GB@{get\+R\+GB}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{get\+R\+G\+B()}{getRGB()}}
+{\footnotesize\ttfamily void Pixel\+::get\+R\+GB (\begin{DoxyParamCaption}\item[{float \&}]{R,  }\item[{float \&}]{G,  }\item[{float \&}]{B }\end{DoxyParamCaption})}
+
+
+
+R\+GB Getter. 
+
+Getter for the coordinates of the \hyperlink{classPoint}{Point} class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em R} & \+: getting the R value of the \hyperlink{classPixel}{Pixel} \\
+\hline
+{\em G} & \+: getting the G value of the \hyperlink{classPixel}{Pixel} \\
+\hline
+{\em B} & \+: getting the B value of the \hyperlink{classPixel}{Pixel} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPixel_a992f88169f2395b752b5480f825efe72}\label{classPixel_a992f88169f2395b752b5480f825efe72}} 
+\index{Pixel@{Pixel}!set\+H\+SV@{set\+H\+SV}}
+\index{set\+H\+SV@{set\+H\+SV}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{set\+H\+S\+V()}{setHSV()}}
+{\footnotesize\ttfamily void Pixel\+::set\+H\+SV (\begin{DoxyParamCaption}\item[{float \&}]{H,  }\item[{float \&}]{S,  }\item[{float \&}]{V }\end{DoxyParamCaption})}
+
+
+
+H\+SV Setter. 
+
+Setter for the coordinates of the \hyperlink{classPoint}{Point} class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em H} & \+: newer H value for the \hyperlink{classPixel}{Pixel} \\
+\hline
+{\em S} & \+: newer S value for the \hyperlink{classPixel}{Pixel} \\
+\hline
+{\em V} & \+: newer V value for the \hyperlink{classPixel}{Pixel} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPixel_a8136f0a0bd54795ee065eeccb1e2ba1f}\label{classPixel_a8136f0a0bd54795ee065eeccb1e2ba1f}} 
+\index{Pixel@{Pixel}!set\+R\+GB@{set\+R\+GB}}
+\index{set\+R\+GB@{set\+R\+GB}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{set\+R\+G\+B()}{setRGB()}}
+{\footnotesize\ttfamily void Pixel\+::set\+R\+GB (\begin{DoxyParamCaption}\item[{float \&}]{R,  }\item[{float \&}]{G,  }\item[{float \&}]{B }\end{DoxyParamCaption})}
+
+
+
+R\+GB Setter. 
+
+Setter for the coordinates of the \hyperlink{classPoint}{Point} class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em R} & \+: newer R value for the \hyperlink{classPixel}{Pixel} \\
+\hline
+{\em G} & \+: newer G value for the \hyperlink{classPixel}{Pixel} \\
+\hline
+{\em B} & \+: newer B value for the \hyperlink{classPixel}{Pixel} \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classPixel_a3cbd62658db95c52ea5471707d3aaf01}\label{classPixel_a3cbd62658db95c52ea5471707d3aaf01}} 
+\index{Pixel@{Pixel}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream,  }\item[{\hyperlink{classPixel}{Pixel} \&}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Stream operator $<$$<$. 
+
+To serialize the \hyperlink{classPixel}{Pixel} and easily save it to a file 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Pixel.\+hpp\item 
+src/Pixel.\+cpp\end{DoxyCompactItemize}

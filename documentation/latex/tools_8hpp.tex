@@ -1,0 +1,137 @@
+\hypertarget{tools_8hpp}{}\section{include/tools.hpp File Reference}
+\label{tools_8hpp}\index{include/tools.\+hpp@{include/tools.\+hpp}}
+
+
+Tools for Digital Elevation model generating.  
+
+
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$geometry/\+Triangle.\+hpp$>$}\newline
+{\ttfamily \#include $<$geometry/\+Point.\+hpp$>$}\newline
+Include dependency graph for tools.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{tools_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{tools_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structStats}{Stats}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structStats}{Stats} \hyperlink{tools_8hpp_afb19c04c1816c276612e24313cb2335a}{statistics} (std\+::map$<$ std\+::pair$<$ double, double $>$, double $>$ m\+\_\+map)
+\begin{DoxyCompactList}\small\item\em statistics \end{DoxyCompactList}\item 
+double \hyperlink{tools_8hpp_a0d1571de2c9f2667b12cb12131bc5e2b}{sign} (double P1x, double P1y, double P2x, double P2y, double P3x, double P3y)
+\begin{DoxyCompactList}\small\item\em sign \end{DoxyCompactList}\item 
+bool \hyperlink{tools_8hpp_acf041af12114025a246f9fa597aed1f3}{is\+Point\+In\+Triangle} (\hyperlink{classPoint}{Point} s, \hyperlink{classTriangle}{Triangle} T)
+\begin{DoxyCompactList}\small\item\em is\+Point\+In\+Triangle \end{DoxyCompactList}\item 
+bool \hyperlink{tools_8hpp_a250ba26e4ded1da8c46f34946d4d1e3a}{concave\+\_\+hull} (\hyperlink{classTriangle}{Triangle} T, float alpha)
+\begin{DoxyCompactList}\small\item\em concave\+\_\+hull \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Tools for Digital Elevation model generating. 
+
+\begin{DoxyAuthor}{Author}
+brateaqu 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{tools_8hpp_a250ba26e4ded1da8c46f34946d4d1e3a}\label{tools_8hpp_a250ba26e4ded1da8c46f34946d4d1e3a}} 
+\index{tools.\+hpp@{tools.\+hpp}!concave\+\_\+hull@{concave\+\_\+hull}}
+\index{concave\+\_\+hull@{concave\+\_\+hull}!tools.\+hpp@{tools.\+hpp}}
+\subsubsection{\texorpdfstring{concave\+\_\+hull()}{concave\_hull()}}
+{\footnotesize\ttfamily bool concave\+\_\+hull (\begin{DoxyParamCaption}\item[{\hyperlink{classTriangle}{Triangle}}]{T,  }\item[{float}]{alpha }\end{DoxyParamCaption})}
+
+
+
+concave\+\_\+hull 
+
+This method help us to process a concave hull to the Delaunay\textquotesingle{}s triangulation data, which lead to create virtual triangles. Checking the restricted circle has a radius lower or equal at alpha.
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & \+: \hyperlink{classTriangle}{Triangle} object in which the \hyperlink{classPoint}{Point} should be. \\
+\hline
+{\em alpha} & \+: critical radius \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{tools_8hpp_acf041af12114025a246f9fa597aed1f3}\label{tools_8hpp_acf041af12114025a246f9fa597aed1f3}} 
+\index{tools.\+hpp@{tools.\+hpp}!is\+Point\+In\+Triangle@{is\+Point\+In\+Triangle}}
+\index{is\+Point\+In\+Triangle@{is\+Point\+In\+Triangle}!tools.\+hpp@{tools.\+hpp}}
+\subsubsection{\texorpdfstring{is\+Point\+In\+Triangle()}{isPointInTriangle()}}
+{\footnotesize\ttfamily bool is\+Point\+In\+Triangle (\begin{DoxyParamCaption}\item[{\hyperlink{classPoint}{Point}}]{s,  }\item[{\hyperlink{classTriangle}{Triangle}}]{T }\end{DoxyParamCaption})}
+
+
+
+is\+Point\+In\+Triangle 
+
+Checking if a \hyperlink{classPoint}{Point} is in a \hyperlink{classTriangle}{Triangle} for data processing in \hyperlink{classDEM}{D\+EM}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & \+: \hyperlink{classPoint}{Point} object \\
+\hline
+{\em T} & \+: \hyperlink{classTriangle}{Triangle} object in which the \hyperlink{classPoint}{Point} should be. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{tools_8hpp_a0d1571de2c9f2667b12cb12131bc5e2b}\label{tools_8hpp_a0d1571de2c9f2667b12cb12131bc5e2b}} 
+\index{tools.\+hpp@{tools.\+hpp}!sign@{sign}}
+\index{sign@{sign}!tools.\+hpp@{tools.\+hpp}}
+\subsubsection{\texorpdfstring{sign()}{sign()}}
+{\footnotesize\ttfamily double sign (\begin{DoxyParamCaption}\item[{double}]{P1x,  }\item[{double}]{P1y,  }\item[{double}]{P2x,  }\item[{double}]{P2y,  }\item[{double}]{P3x,  }\item[{double}]{P3y }\end{DoxyParamCaption})}
+
+
+
+sign 
+
+Method used in is\+Point\+In\+Triangle. Determine the sign of a product
+
+
+\begin{DoxyParams}{Parameters}
+{\em P1\+\_\+x} & \+: x coordinate of the first point \\
+\hline
+{\em P1\+\_\+y} & \+: y coordinate of the first point \\
+\hline
+{\em P2\+\_\+x} & \+: x coordinate of the second point \\
+\hline
+{\em P2\+\_\+y} & \+: y coordinate of the second point \\
+\hline
+{\em P3\+\_\+x} & \+: x coordinate of the third point \\
+\hline
+{\em P3\+\_\+y} & \+: y coordinate of the third point \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{tools_8hpp_afb19c04c1816c276612e24313cb2335a}\label{tools_8hpp_afb19c04c1816c276612e24313cb2335a}} 
+\index{tools.\+hpp@{tools.\+hpp}!statistics@{statistics}}
+\index{statistics@{statistics}!tools.\+hpp@{tools.\+hpp}}
+\subsubsection{\texorpdfstring{statistics()}{statistics()}}
+{\footnotesize\ttfamily \hyperlink{structStats}{Stats} statistics (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::pair$<$ double, double $>$, double $>$}]{m\+\_\+map }\end{DoxyParamCaption})}
+
+
+
+statistics 
+
+Processing statistics on a map. Extracting xmin, xmax, ymin, ymax, zmin and zmax on an map of pairs.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+map} & \+: map of pairs of double \\
+\hline
+\end{DoxyParams}

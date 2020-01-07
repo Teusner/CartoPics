@@ -1,0 +1,311 @@
+\hypertarget{classColour}{}\section{Colour Class Reference}
+\label{classColour}\index{Colour@{Colour}}
+
+
+{\ttfamily \#include $<$colourmanager.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classColour_a46612b9524fcd4cee818af6a86b7a4d2}\label{classColour_a46612b9524fcd4cee818af6a86b7a4d2}} 
+\hyperlink{classColour_a46612b9524fcd4cee818af6a86b7a4d2}{Colour} ()
+\begin{DoxyCompactList}\small\item\em An empty constructor for the class. $\ast$/. \end{DoxyCompactList}\item 
+\hyperlink{classColour_a25a9ec348579c9df5363220ccbc1f3ec}{Colour} (float R, float G, float B, float A)
+\begin{DoxyCompactList}\small\item\em A constructor for the \hyperlink{classColour}{Colour} class. \end{DoxyCompactList}\item 
+\hyperlink{classColour_a4a447496ea54cc0d8b5f5cc5131ae0b6}{Colour} (float R, float G, float B, float A, std\+::string name)
+\begin{DoxyCompactList}\small\item\em A constructor for the \hyperlink{classColour}{Colour} class. \end{DoxyCompactList}\item 
+\hyperlink{classColour_a0a90c893db7eb92dd6fac4557123c3ac}{Colour} (std\+::string hex)
+\begin{DoxyCompactList}\small\item\em A constructor for the \hyperlink{classColour}{Colour} class created using a colour hex value. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classColour_a7f0220a8b5a1a0b476a1dc8f305484f7}{get\+Hex\+Colour} ()
+\begin{DoxyCompactList}\small\item\em Returns the hex value of the colour object as a std\+::string. \end{DoxyCompactList}\item 
+void \hyperlink{classColour_ade98ca5af3cde8f754e9b255dcaaeb24}{setR} (float R)
+\begin{DoxyCompactList}\small\item\em Sets the red channel value. \end{DoxyCompactList}\item 
+void \hyperlink{classColour_a7486867cf650aa822660cf40c394e06c}{setG} (float G)
+\begin{DoxyCompactList}\small\item\em Sets the green channel value. \end{DoxyCompactList}\item 
+void \hyperlink{classColour_ab29d4612841a580f2b668f1f2710b978}{setB} (float B)
+\begin{DoxyCompactList}\small\item\em Sets the blue channel value. \end{DoxyCompactList}\item 
+void \hyperlink{classColour_a894ca29ba370974e7e0be904ca9ba65e}{set\+Alpha} (float Alpha)
+\begin{DoxyCompactList}\small\item\em Sets the colour alpha value. \end{DoxyCompactList}\item 
+void \hyperlink{classColour_aeff40cb4f5ed87207c0efb2de32c01ad}{set\+Name\+ID} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Sets the colour name. \end{DoxyCompactList}\item 
+int \hyperlink{classColour_a3ac86075f6a02085c2d80c6648409f01}{get\+IntR} ()
+\begin{DoxyCompactList}\small\item\em Gets the red channel value (0-\/255 int) \end{DoxyCompactList}\item 
+int \hyperlink{classColour_a417a9c415589e6bb1163ca2e264ccb61}{get\+IntG} ()
+\begin{DoxyCompactList}\small\item\em Gets the green channel value (0-\/255 int) \end{DoxyCompactList}\item 
+int \hyperlink{classColour_a01d2ae35756ace52645d02be5ca001e0}{get\+IntB} ()
+\begin{DoxyCompactList}\small\item\em Gets the blue channel value (0-\/255 int) \end{DoxyCompactList}\item 
+float \hyperlink{classColour_a6237399e251d876aefe5d583ad251973}{getR} ()
+\begin{DoxyCompactList}\small\item\em Gets the red channel value (0-\/1 float) \end{DoxyCompactList}\item 
+float \hyperlink{classColour_aa16d7328c2acc3d701fd39593be50a65}{getG} ()
+\begin{DoxyCompactList}\small\item\em Gets the green channel value (0-\/1 float) \end{DoxyCompactList}\item 
+float \hyperlink{classColour_a9be696d70131487b8c2c4d92e09d5c8e}{getB} ()
+\begin{DoxyCompactList}\small\item\em Gets the blue channel value (0-\/1 float) \end{DoxyCompactList}\item 
+float \hyperlink{classColour_aa3108e4e8b6119a5e56222cd9e910219}{get\+Alpha} ()
+\begin{DoxyCompactList}\small\item\em Gets the alpha channel value (0-\/1 float) \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classColour_a5f5329e70ac61e998658b4586ddfa753}{get\+Name\+ID} ()
+\begin{DoxyCompactList}\small\item\em Gets the colour name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classColour}{Colour} class -\/ This holds the colour channel values and functions needed to produce R\+GB (float or int value) or hex values 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classColour_a25a9ec348579c9df5363220ccbc1f3ec}\label{classColour_a25a9ec348579c9df5363220ccbc1f3ec}} 
+\index{Colour@{Colour}!Colour@{Colour}}
+\index{Colour@{Colour}!Colour@{Colour}}
+\subsubsection{\texorpdfstring{Colour()}{Colour()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Colour\+::\+Colour (\begin{DoxyParamCaption}\item[{float}]{R,  }\item[{float}]{G,  }\item[{float}]{B,  }\item[{float}]{A }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+A constructor for the \hyperlink{classColour}{Colour} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em R} & The red colour channel -\/ Either 0-\/1 OR 0-\/255 \\
+\hline
+{\em G} & The green colour channel -\/ Either 0-\/1 OR 0-\/255 \\
+\hline
+{\em B} & The blue colour channel -\/ Either 0-\/1 OR 0-\/255 \\
+\hline
+{\em A} & The alpha colour channel -\/ Either 0-\/1 OR 0-\/255 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classColour_a4a447496ea54cc0d8b5f5cc5131ae0b6}\label{classColour_a4a447496ea54cc0d8b5f5cc5131ae0b6}} 
+\index{Colour@{Colour}!Colour@{Colour}}
+\index{Colour@{Colour}!Colour@{Colour}}
+\subsubsection{\texorpdfstring{Colour()}{Colour()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Colour\+::\+Colour (\begin{DoxyParamCaption}\item[{float}]{R,  }\item[{float}]{G,  }\item[{float}]{B,  }\item[{float}]{A,  }\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+A constructor for the \hyperlink{classColour}{Colour} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em R} & The red colour channel -\/ float value either 0-\/1 OR 0-\/255 \\
+\hline
+{\em G} & The green colour channel -\/ float value Either 0-\/1 OR 0-\/255 \\
+\hline
+{\em B} & The blue colour channel -\/ float value Either 0-\/1 OR 0-\/255 \\
+\hline
+{\em A} & The alpha colour channel -\/ float value Either 0-\/1 OR 0-\/255 \\
+\hline
+{\em A} & The alpha colour channel -\/ float value Either 0-\/1 OR 0-\/255 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classColour_a0a90c893db7eb92dd6fac4557123c3ac}\label{classColour_a0a90c893db7eb92dd6fac4557123c3ac}} 
+\index{Colour@{Colour}!Colour@{Colour}}
+\index{Colour@{Colour}!Colour@{Colour}}
+\subsubsection{\texorpdfstring{Colour()}{Colour()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Colour\+::\+Colour (\begin{DoxyParamCaption}\item[{std\+::string}]{hex }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+A constructor for the \hyperlink{classColour}{Colour} class created using a colour hex value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hex} & -\/ a string that contains the hex colour value. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classColour_aa3108e4e8b6119a5e56222cd9e910219}\label{classColour_aa3108e4e8b6119a5e56222cd9e910219}} 
+\index{Colour@{Colour}!get\+Alpha@{get\+Alpha}}
+\index{get\+Alpha@{get\+Alpha}!Colour@{Colour}}
+\subsubsection{\texorpdfstring{get\+Alpha()}{getAlpha()}}
+{\footnotesize\ttfamily float Colour\+::get\+Alpha (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the alpha channel value (0-\/1 float) 
+
+\begin{DoxyReturn}{Returns}
+float alpha channel value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classColour_a9be696d70131487b8c2c4d92e09d5c8e}\label{classColour_a9be696d70131487b8c2c4d92e09d5c8e}} 
+\index{Colour@{Colour}!getB@{getB}}
+\index{getB@{getB}!Colour@{Colour}}
+\subsubsection{\texorpdfstring{get\+B()}{getB()}}
+{\footnotesize\ttfamily float Colour\+::getB (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the blue channel value (0-\/1 float) 
+
+\begin{DoxyReturn}{Returns}
+float B channel value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classColour_aa16d7328c2acc3d701fd39593be50a65}\label{classColour_aa16d7328c2acc3d701fd39593be50a65}} 
+\index{Colour@{Colour}!getG@{getG}}
+\index{getG@{getG}!Colour@{Colour}}
+\subsubsection{\texorpdfstring{get\+G()}{getG()}}
+{\footnotesize\ttfamily float Colour\+::getG (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the green channel value (0-\/1 float) 
+
+\begin{DoxyReturn}{Returns}
+float G channel value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classColour_a7f0220a8b5a1a0b476a1dc8f305484f7}\label{classColour_a7f0220a8b5a1a0b476a1dc8f305484f7}} 
+\index{Colour@{Colour}!get\+Hex\+Colour@{get\+Hex\+Colour}}
+\index{get\+Hex\+Colour@{get\+Hex\+Colour}!Colour@{Colour}}
+\subsubsection{\texorpdfstring{get\+Hex\+Colour()}{getHexColour()}}
+{\footnotesize\ttfamily std\+::string Colour\+::get\+Hex\+Colour (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the hex value of the colour object as a std\+::string. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string hex value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classColour_a01d2ae35756ace52645d02be5ca001e0}\label{classColour_a01d2ae35756ace52645d02be5ca001e0}} 
+\index{Colour@{Colour}!get\+IntB@{get\+IntB}}
+\index{get\+IntB@{get\+IntB}!Colour@{Colour}}
+\subsubsection{\texorpdfstring{get\+Int\+B()}{getIntB()}}
+{\footnotesize\ttfamily int Colour\+::get\+IntB (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the blue channel value (0-\/255 int) 
+
+\begin{DoxyReturn}{Returns}
+int B channel value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classColour_a417a9c415589e6bb1163ca2e264ccb61}\label{classColour_a417a9c415589e6bb1163ca2e264ccb61}} 
+\index{Colour@{Colour}!get\+IntG@{get\+IntG}}
+\index{get\+IntG@{get\+IntG}!Colour@{Colour}}
+\subsubsection{\texorpdfstring{get\+Int\+G()}{getIntG()}}
+{\footnotesize\ttfamily int Colour\+::get\+IntG (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the green channel value (0-\/255 int) 
+
+\begin{DoxyReturn}{Returns}
+int B channel value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classColour_a3ac86075f6a02085c2d80c6648409f01}\label{classColour_a3ac86075f6a02085c2d80c6648409f01}} 
+\index{Colour@{Colour}!get\+IntR@{get\+IntR}}
+\index{get\+IntR@{get\+IntR}!Colour@{Colour}}
+\subsubsection{\texorpdfstring{get\+Int\+R()}{getIntR()}}
+{\footnotesize\ttfamily int Colour\+::get\+IntR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the red channel value (0-\/255 int) 
+
+\begin{DoxyReturn}{Returns}
+int R channel value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classColour_a5f5329e70ac61e998658b4586ddfa753}\label{classColour_a5f5329e70ac61e998658b4586ddfa753}} 
+\index{Colour@{Colour}!get\+Name\+ID@{get\+Name\+ID}}
+\index{get\+Name\+ID@{get\+Name\+ID}!Colour@{Colour}}
+\subsubsection{\texorpdfstring{get\+Name\+I\+D()}{getNameID()}}
+{\footnotesize\ttfamily std\+::string Colour\+::get\+Name\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the colour name. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string m\+\_\+\+Name\+ID name value; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classColour_a6237399e251d876aefe5d583ad251973}\label{classColour_a6237399e251d876aefe5d583ad251973}} 
+\index{Colour@{Colour}!getR@{getR}}
+\index{getR@{getR}!Colour@{Colour}}
+\subsubsection{\texorpdfstring{get\+R()}{getR()}}
+{\footnotesize\ttfamily float Colour\+::getR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the red channel value (0-\/1 float) 
+
+\begin{DoxyReturn}{Returns}
+float R channel value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classColour_a894ca29ba370974e7e0be904ca9ba65e}\label{classColour_a894ca29ba370974e7e0be904ca9ba65e}} 
+\index{Colour@{Colour}!set\+Alpha@{set\+Alpha}}
+\index{set\+Alpha@{set\+Alpha}!Colour@{Colour}}
+\subsubsection{\texorpdfstring{set\+Alpha()}{setAlpha()}}
+{\footnotesize\ttfamily void Colour\+::set\+Alpha (\begin{DoxyParamCaption}\item[{float}]{Alpha }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the colour alpha value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em float} & Alpha -\/ the alpha value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classColour_ab29d4612841a580f2b668f1f2710b978}\label{classColour_ab29d4612841a580f2b668f1f2710b978}} 
+\index{Colour@{Colour}!setB@{setB}}
+\index{setB@{setB}!Colour@{Colour}}
+\subsubsection{\texorpdfstring{set\+B()}{setB()}}
+{\footnotesize\ttfamily void Colour\+::setB (\begin{DoxyParamCaption}\item[{float}]{B }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the blue channel value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em float} & B -\/ the blue channel value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classColour_a7486867cf650aa822660cf40c394e06c}\label{classColour_a7486867cf650aa822660cf40c394e06c}} 
+\index{Colour@{Colour}!setG@{setG}}
+\index{setG@{setG}!Colour@{Colour}}
+\subsubsection{\texorpdfstring{set\+G()}{setG()}}
+{\footnotesize\ttfamily void Colour\+::setG (\begin{DoxyParamCaption}\item[{float}]{G }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the green channel value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em float} & G -\/ the green channel value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classColour_aeff40cb4f5ed87207c0efb2de32c01ad}\label{classColour_aeff40cb4f5ed87207c0efb2de32c01ad}} 
+\index{Colour@{Colour}!set\+Name\+ID@{set\+Name\+ID}}
+\index{set\+Name\+ID@{set\+Name\+ID}!Colour@{Colour}}
+\subsubsection{\texorpdfstring{set\+Name\+I\+D()}{setNameID()}}
+{\footnotesize\ttfamily void Colour\+::set\+Name\+ID (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the colour name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em std\+::string} & name -\/ the colour name. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classColour_ade98ca5af3cde8f754e9b255dcaaeb24}\label{classColour_ade98ca5af3cde8f754e9b255dcaaeb24}} 
+\index{Colour@{Colour}!setR@{setR}}
+\index{setR@{setR}!Colour@{Colour}}
+\subsubsection{\texorpdfstring{set\+R()}{setR()}}
+{\footnotesize\ttfamily void Colour\+::setR (\begin{DoxyParamCaption}\item[{float}]{R }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the red channel value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em float} & R -\/ the red channel value. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/colourmanager.\+h\end{DoxyCompactItemize}

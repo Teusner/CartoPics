@@ -1,0 +1,149 @@
+\hypertarget{classDEM}{}\section{D\+EM Class Reference}
+\label{classDEM}\index{D\+EM@{D\+EM}}
+
+
+Digital Elevation Model.  
+
+
+
+
+{\ttfamily \#include $<$D\+E\+M.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDEM_a64156558bc796710150012bf7873a2ad}{D\+EM} (const string \&ifname, const string \&ofname, const int \&x)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classDEM_abd0e17d348572bcb75f94a23652828fc}{$\sim$\+D\+EM} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classDEM_aa335c6a15872db8075dcfc2074bc24a1}{read} (const string \&filename)
+\begin{DoxyCompactList}\small\item\em read method \end{DoxyCompactList}\item 
+void \hyperlink{classDEM_aadcc1b7e58d927d53d98356ad564ff30}{triangulation} (void)
+\begin{DoxyCompactList}\small\item\em triangulation method \end{DoxyCompactList}\item 
+void \hyperlink{classDEM_a1a9c426ce0626fea4f066b73c7045e6f}{process} (void)
+\begin{DoxyCompactList}\small\item\em process method \end{DoxyCompactList}\item 
+void \hyperlink{classDEM_ae5972d803d7f32e640fb732d4a98dfcf}{hill\+\_\+shading} (void)
+\begin{DoxyCompactList}\small\item\em hill\+\_\+shading method \end{DoxyCompactList}\item 
+void \hyperlink{classDEM_a6cb0c96b5a5b2d7c0f7ac07377a64dbd}{save} (string filename, int x, int y)
+\begin{DoxyCompactList}\small\item\em save method \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDEM_a22732c433a3cc1d4d8f9cb35e24395bc}\label{classDEM_a22732c433a3cc1d4d8f9cb35e24395bc}} 
+double {\bfseries xmin}
+\item 
+\mbox{\Hypertarget{classDEM_a16f764fb785c33b98a8f011ed2bd8a43}\label{classDEM_a16f764fb785c33b98a8f011ed2bd8a43}} 
+double {\bfseries xmax}
+\item 
+\mbox{\Hypertarget{classDEM_ad5dc7476428ed3f19d5007f7a7a1efd4}\label{classDEM_ad5dc7476428ed3f19d5007f7a7a1efd4}} 
+double {\bfseries ymin}
+\item 
+\mbox{\Hypertarget{classDEM_a8e805974b711783d8e40fb9d1eda48a3}\label{classDEM_a8e805974b711783d8e40fb9d1eda48a3}} 
+double {\bfseries ymax}
+\item 
+\mbox{\Hypertarget{classDEM_a9aaf109ccf41fedb0461de327e7d2945}\label{classDEM_a9aaf109ccf41fedb0461de327e7d2945}} 
+double {\bfseries zmin}
+\item 
+\mbox{\Hypertarget{classDEM_a114f2350fe4801770ab19a213cb5674c}\label{classDEM_a114f2350fe4801770ab19a213cb5674c}} 
+double {\bfseries zmax}
+\item 
+\mbox{\Hypertarget{classDEM_a666d01098888bbc8ad8fd8ef984c1f8b}\label{classDEM_a666d01098888bbc8ad8fd8ef984c1f8b}} 
+float {\bfseries x\+\_\+labelizator} = 1
+\item 
+\mbox{\Hypertarget{classDEM_aec340951d2e311485b4e0e76a6c5161a}\label{classDEM_aec340951d2e311485b4e0e76a6c5161a}} 
+float {\bfseries y\+\_\+labelizator} = 1
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Digital Elevation Model. 
+
+Let us create an object to load a file of cartographics data, and processing it to get a coloured image as an output. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDEM_a64156558bc796710150012bf7873a2ad}\label{classDEM_a64156558bc796710150012bf7873a2ad}} 
+\index{D\+EM@{D\+EM}!D\+EM@{D\+EM}}
+\index{D\+EM@{D\+EM}!D\+EM@{D\+EM}}
+\subsubsection{\texorpdfstring{D\+E\+M()}{DEM()}}
+{\footnotesize\ttfamily D\+E\+M\+::\+D\+EM (\begin{DoxyParamCaption}\item[{const string \&}]{ifname,  }\item[{const string \&}]{ofname,  }\item[{const int \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Constructor of the \hyperlink{classDEM}{D\+EM} class. It let us initialize the name of the input file, the name of the output file and the number of pixels for the x-\/axis of the output image. \mbox{\Hypertarget{classDEM_abd0e17d348572bcb75f94a23652828fc}\label{classDEM_abd0e17d348572bcb75f94a23652828fc}} 
+\index{D\+EM@{D\+EM}!````~D\+EM@{$\sim$\+D\+EM}}
+\index{````~D\+EM@{$\sim$\+D\+EM}!D\+EM@{D\+EM}}
+\subsubsection{\texorpdfstring{$\sim$\+D\+E\+M()}{~DEM()}}
+{\footnotesize\ttfamily D\+E\+M\+::$\sim$\+D\+EM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+Destructor of the \hyperlink{classDEM}{D\+EM} class. Let us destruct the image dynamically allocated during the Digital Elevation Model processing. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classDEM_ae5972d803d7f32e640fb732d4a98dfcf}\label{classDEM_ae5972d803d7f32e640fb732d4a98dfcf}} 
+\index{D\+EM@{D\+EM}!hill\+\_\+shading@{hill\+\_\+shading}}
+\index{hill\+\_\+shading@{hill\+\_\+shading}!D\+EM@{D\+EM}}
+\subsubsection{\texorpdfstring{hill\+\_\+shading()}{hill\_shading()}}
+{\footnotesize\ttfamily void D\+E\+M\+::hill\+\_\+shading (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+hill\+\_\+shading method 
+
+This method add shading on the image, using the hill shading method, to have a better output. \mbox{\Hypertarget{classDEM_a1a9c426ce0626fea4f066b73c7045e6f}\label{classDEM_a1a9c426ce0626fea4f066b73c7045e6f}} 
+\index{D\+EM@{D\+EM}!process@{process}}
+\index{process@{process}!D\+EM@{D\+EM}}
+\subsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily void D\+E\+M\+::process (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+process method 
+
+This method process each pixels of the output image. \mbox{\Hypertarget{classDEM_aa335c6a15872db8075dcfc2074bc24a1}\label{classDEM_aa335c6a15872db8075dcfc2074bc24a1}} 
+\index{D\+EM@{D\+EM}!read@{read}}
+\index{read@{read}!D\+EM@{D\+EM}}
+\subsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void D\+E\+M\+::read (\begin{DoxyParamCaption}\item[{const string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+read method 
+
+This method let us read a file of elevation data for \hyperlink{classDEM}{D\+EM} generating.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & \+: the name of the input file \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDEM_a6cb0c96b5a5b2d7c0f7ac07377a64dbd}\label{classDEM_a6cb0c96b5a5b2d7c0f7ac07377a64dbd}} 
+\index{D\+EM@{D\+EM}!save@{save}}
+\index{save@{save}!D\+EM@{D\+EM}}
+\subsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily void D\+E\+M\+::save (\begin{DoxyParamCaption}\item[{string}]{filename,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+save method 
+
+This method let use save the created image. \mbox{\Hypertarget{classDEM_aadcc1b7e58d927d53d98356ad564ff30}\label{classDEM_aadcc1b7e58d927d53d98356ad564ff30}} 
+\index{D\+EM@{D\+EM}!triangulation@{triangulation}}
+\index{triangulation@{triangulation}!D\+EM@{D\+EM}}
+\subsubsection{\texorpdfstring{triangulation()}{triangulation()}}
+{\footnotesize\ttfamily void D\+E\+M\+::triangulation (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+triangulation method 
+
+This method set up a Delaunay\textquotesingle{}s triangulation on the data and labelize the triangles to make the search in these triangles easier. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{DEM_8hpp}{D\+E\+M.\+hpp}\item 
+src/D\+E\+M.\+cpp\end{DoxyCompactItemize}

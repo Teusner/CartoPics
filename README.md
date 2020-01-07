@@ -52,6 +52,27 @@ And then, run CartoPics with the name of your file in parameter and the number o
 
 You can find your output image in the same directory with the name *my_file_map.ppm*
 
+## Running the tests
+
+To run the test, you need first to compile the project. Then you are able to run *ctest* in the build path.
+```bash
+cd build
+ctest
+```
+
+You can too run verbose tests to have more informations about the tests.
+
+```bash
+ctest --verbose
+```
+
+## Read The Docs
+
+A documentation of the modules used is available in the documentation folder. You can show the html page which was generated with *Doxygen* with :
+
+```bash
+firefox documentation/index.html
+```
 
 ## Built With
 

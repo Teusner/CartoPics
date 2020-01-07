@@ -1,0 +1,75 @@
+Carto\+Pics is a simple script to generate Digital Elevation Model picture.
+
+ ~\newline
+ {\itshape Raster of a Brest\textquotesingle{}s harbour area} 
+
+\subsection*{Getting Started}
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+\subsubsection*{Prerequisites}
+
+Let\textquotesingle{}s get started ! Clone the repository using git
+
+
+\begin{DoxyCode}
+git clone https://github.com/Teusner/CartoPics
+\end{DoxyCode}
+
+
+\subsubsection*{Compiling}
+
+You are now able to compile the project
+
+
+\begin{DoxyCode}
+cd CartoPics/src
+mkdir build
+cd build
+cmake ..
+make
+\end{DoxyCode}
+
+
+create\+\_\+raster is now generate in Cartopics/src/build
+
+\subsubsection*{First example}
+
+To generate a Digital Elevation Model, you should have a file of the points you measured, as you can see on the following example
+
+
+\begin{DoxyCode}
+# latitude    longitude  elevation
+48.29762887 -004.41737340 14.334
+48.29762971 -004.41735997 14.379
+48.29763698 -004.41738809 14.452
+...
+\end{DoxyCode}
+ And then, run Carto\+Pics with the name of your file in parameter and the number of pixel along the x-\/axis
+
+
+\begin{DoxyCode}
+./cartopics my\_file.txt 1000
+\end{DoxyCode}
+
+
+You can find your output image in the same directory with the name {\itshape my\+\_\+file\+\_\+map.\+ppm}
+
+\subsection*{Built With}
+
+
+\begin{DoxyItemize}
+\item \href{https://github.com/delfrrr/delaunator-cpp}{\tt delaunator-\/cpp} -\/ An efficient delaunay triangulation library
+\item \href{https://github.com/richardroberts1992/Spectrum}{\tt Spectrum} -\/ A Color\+Map generator \href{http://cs.swan.ac.uk/~csbob/research/callCenter/color/roberts18spectrum.pdf}{\tt P\+DF Description}
+\end{DoxyItemize}
+
+\subsection*{Authors}
+
+
+\begin{DoxyItemize}
+\item {\bfseries Brateau Quentin} -\/ {\itshape Initial work} -\/ \href{https://github.com/Teusner}{\tt Teusner} \+:sunglasses\+:
+\end{DoxyItemize}
+
+\subsection*{License}
+
+This project is licensed under the G\+NU General Public License v3.\+0 -\/ see the L\+I\+C\+E\+N\+SE.md file for details 

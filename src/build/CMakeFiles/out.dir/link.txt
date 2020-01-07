@@ -1,1 +1,0 @@
-/usr/bin/c++    -rdynamic CMakeFiles/out.dir/main.cpp.o CMakeFiles/out.dir/MNT.cpp.o  -o out 

@@ -50,10 +50,45 @@
 		    */
             ~DEM();
 
+            /*!
+		    *  \brief read method
+		   	*
+		    *  This method let us read a file of elevation data for DEM generating.
+            * 
+            *  \param filename : the name of the input file
+		    */
             void read(const string& filename);
+
+            /*!
+		    *  \brief triangulation method
+		   	*
+		    *  This method set up a Delaunay's triangulation on the data and labelize the triangles to make the search in these triangles easier.
+            * 
+		    */
             void triangulation(void);
+
+            /*!
+		    *  \brief process method
+		   	*
+		    *  This method process each pixels of the output image.
+            * 
+		    */
             void process(void);
+
+            /*!
+		    *  \brief hill_shading method
+		   	*
+		    *  This method add shading on the image, using the hill shading method, to have a better output.
+            * 
+		    */
             void hill_shading(void);
+
+            /*!
+		    *  \brief save method
+		   	*
+		    *  This method let use save the created image.
+            * 
+		    */
             void save(string filename, int x, int y);            
 
             // Statistics on the input file
